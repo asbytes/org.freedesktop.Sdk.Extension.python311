@@ -1,0 +1,77 @@
+{
+    "name": "python3-modules",
+    "buildsystem": "simple",
+    "build-commands": [],
+    "modules": [
+        {
+            "name": "python3-pip",
+            "buildsystem": "simple",
+            "build-commands": [
+                "${FLATPAK_DEST}/bin/pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pip==23.0.1\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/07/51/2c0959c5adf988c44d9e1e0d940f5b074516ecc87e96b1af25f59de9ba38/pip-23.0.1-py3-none-any.whl",
+                    "sha256": "236bcb61156d76c4b8a05821b988c7b8c35bf0da28a4b614e8d6ab5212c25c6f"
+                }
+            ]
+        },
+        {
+            "name": "python3-setuptools",
+            "buildsystem": "simple",
+            "build-commands": [
+                "${FLATPAK_DEST}/bin/pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==67.4.0\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/2c/3a/e0340041dad00234d1fe569ed55b602d24eb11a4939b0a2ec844e970a87d/setuptools-67.4.0-py3-none-any.whl",
+                    "sha256": "f106dee1b506dee5102cc3f3e9e68137bbad6d47b616be7991714b0c62204251"
+                }
+            ]
+        },
+        {
+            "name": "python3-six",
+            "buildsystem": "simple",
+            "build-commands": [
+                "${FLATPAK_DEST}/bin/pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"six==1.16.0\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl",
+                    "sha256": "8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+                }
+            ]
+        },
+        {
+            "name": "wheel",
+            "buildsystem": "simple",
+            "build-commands": [
+                "${FLATPAK_DEST}/bin/pip3 install --verbose --ignore-installed --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} \"wheel==0.38.4\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/bd/7c/d38a0b30ce22fc26ed7dbc087c6d00851fb3395e9d0dac40bec1f905030c/wheel-0.38.4-py3-none-any.whl",
+                    "sha256": "b60533f3f5d530e971d6737ca6d58681ee434818fab630c83a734bb10c083ce8"
+                }
+            ]
+        },
+        {
+            "name": "python3-cython",
+            "buildsystem": "simple",
+            "build-commands": [
+                "${FLATPAK_DEST}/bin/pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cython==0.29.33\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/dc/f6/e8e302f9942cbebede88b1a0c33d0be3a738c3ac37abae87254d58ffc51c/Cython-0.29.33.tar.gz",
+                    "sha256": "5040764c4a4d2ce964a395da24f0d1ae58144995dab92c6b96f44c3f4d72286a"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "org.freedesktop.Sdk.Extension.python3-11",
+  "branch": "22.08",
+  "runtime": "org.freedesktop.Sdk",
+  "build-extension": true,
+  "sdk": "org.freedesktop.Sdk",
+  "runtime-version": "22.08",
+  "separate-locales": false,
+  "appstream-compose": false,
+  "build-options": {
+    "no-debuginfo": true,
+    "strip": true,
+    "prefix": "/usr/lib/sdk/python3-11",
+    "cflags": "-g0",
+    "cxxflags": "-g0"
+    },
+  "modules": [
+    {
+      "name": "python3.11",
+      "config-opts": [
+        "--enable-shared",
+        "--with-ensurepip",
+        "--with-system-expat",
+        "--with-system-ffi",
+        "--enable-loadable-sqlite-extensions",
+        "--with-dbmliborder=gdbm",
+        "--with-lto"
+      ],
+      "cleanup" : [
+        "/bin/idle3*",
+        "/lib/pkgconfig",
+        "/lib/python*/__phello__",
+        "/lib/python*/__hello__.py",
+        "/lib/python*/idlelib",
+        "/lib/python*/test",
+        "/lib/python*/*/test",
+        "/lib/python*/*/tests",
+        "/lib/python*/tkinter*",
+        "/lib/python*/turtle*",
+        "/share"
+      ],
+      "sources": [
+        {
+          "url" : "https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tar.xz",
+          "sha256" : "29e4b8f5f1658542a8c13e2dd277358c9c48f2b2f7318652ef1675e402b9d2af",
+          "type" : "archive"
+        }
+      ],
+      "post-install" : [
+        "chmod 644 /usr/lib/sdk/python3-11/lib/libpython3.11.so.1.0",
+        "chmod 644 /usr/lib/sdk/python3-11/lib/libpython3.so"
+      ]
+    },
+    {
+      "name": "scripts",
+      "buildsystem": "simple",
+      "build-commands": [
+        "cp enable.sh /usr/lib/sdk/python3-11/"
+      ],
+      "sources": [
+        {
+          "type": "script",
+          "commands": [
+             "export PATH=$PATH:/usr/lib/sdk/python3-11/bin"
+          ],
+          "dest-filename": "enable.sh"
+        }
+      ]
+    },
+
+    "python3-modules.json",
+    
+    {
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm0644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+        "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "org.freedesktop.Sdk.Extension.python3-11.metainfo.xml"
+        }
+      ]
+    }
+  ]
+}

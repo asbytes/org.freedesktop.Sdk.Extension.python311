@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+    <id>org.freedesktop.Sdk.Extension.python3-11</id>
+    <extends>org.freedesktop.Sdk</extends>
+    <name>Python 3.11</name>
+    <summary>Python 3.11 programming language interpreter and standard libraries</summary>
+    <project_license>PSFL</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+    <url type="homepage">https://github.com/flathub/org.freedesktop.Sdk.Extension.python3-11</url>
+    <releases>
+        <release version="3.11.2" date="2023-02-24"/>
+    </releases>
+</component>
