@@ -4,7 +4,7 @@
     <extends>org.freedesktop.Sdk</extends>
     <name>Python 3.11</name>
     <summary>Python 3.11 programming language interpreter and standard libraries</summary>
-    <project_license>PSFL</project_license>
+    <project_license>PSF-2.0</project_license>
     <metadata_license>CC0-1.0</metadata_license>
     <url type="homepage">https://github.com/flathub/org.freedesktop.Sdk.Extension.python3-11</url>
     <releases>
