@@ -41,8 +41,8 @@
       ],
       "sources": [
         {
-          "url" : "https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tar.xz",
-          "sha256" : "8a5db99c961a7ecf27c75956189c9602c968751f11dbeae2b900dbff1c085b5e",
+          "url" : "https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tar.xz",
+          "sha256" : "85cd12e9cf1d6d5a45f17f7afe1cebe7ee628d3282281c492e86adf636defa3f",
           "type" : "archive"
         }
       ],
